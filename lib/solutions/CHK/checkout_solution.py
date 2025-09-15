@@ -38,7 +38,7 @@ class CheckoutSolution:
     }
 
     GROUP_OFFERS = {
-        {""}
+        {"group_items":["S","T","X","Y","Z"],"group_size":3,"group_price":45}
     }
 
 
@@ -103,9 +103,15 @@ class CheckoutSolution:
                 if free_item in counted_items:
                     counted_items[free_item] = max(0,counted_items[free_item] - free_count)
 
-        
-
         total = 0
+        for group in self.GROUP_OFFERS:
+            group_items = group["group_items"]
+            group_size = group["group_size"]
+            group_price = group["group_price"]
+
+            
+            total+=1
+
         for item,count in counted_items.items():
             unit_price = self.ITEM_PRICES[item]["unit_price"]
 
@@ -118,3 +124,4 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
+

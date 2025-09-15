@@ -95,7 +95,7 @@ class CheckoutSolution:
             if item in counted_items:
                 free_count = (counted_items[item]//required_amount) * free_amount
                 if free_item in counted_items:
-                    counted_items[free_item] = counted_items[free_item] - free_count
+                    counted_items[free_item] = max(0,counted_items[free_item] - free_count)
 
         total = 0
         for item,count in counted_items.items():
@@ -109,6 +109,7 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
+
 
 
 

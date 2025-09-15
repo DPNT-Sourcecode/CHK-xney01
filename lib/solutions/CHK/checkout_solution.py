@@ -40,15 +40,6 @@ class CheckoutSolution:
 
         extra_offers = {"E":(2,"B",1)}
 
-        # item_prices = {
-        #     "A":50, "B":30, "C":20,"D":15,"E":40
-        # }
-
-        # item_offers = {
-        #     "A":(3,130),
-        #     "B":(2,45)
-        # }
-
         if not isinstance(skus,str):
             return -1
         
@@ -61,7 +52,12 @@ class CheckoutSolution:
         total = 0
 
         for item,count in counted_items.items():
-            if
+            unit_price = item_prices[item]["unit_price"]
+            special_offers = item_prices[item]["special_offers"]
+
+            for offer_amount,offer_price in special_offers:
+                num_applies,remaining = divmod(count,offer_amount)
+            
 
         # for item,count in counted_items.items():
         #     if item in item_offers:
@@ -75,6 +71,7 @@ class CheckoutSolution:
         #         total += count * item_prices[item]
 
         return total
+
 
 
 

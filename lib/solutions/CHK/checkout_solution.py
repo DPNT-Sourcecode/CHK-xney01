@@ -30,6 +30,13 @@ class CheckoutSolution:
         Returns:
             int: an integer representing the total checkout value of the items
         """
-        item_prices = {}
+
+        item_prices = {
+            "A":50, "B":30, "C":20,"D"
+        }
+        if not isinstance(skus,str):
+            return -1
+        
         raise NotImplementedError()
+
 

@@ -49,11 +49,16 @@ class CheckoutSolution:
         
         counted_items = Counter(skus)
 
-        total = 0
+        for item,(required_amount,free_item,free_amount) in extra_offers.items():
+            if item in counted_items:
+                free_count = counted_items[item] * free_amount
+                
+        
 
+        total = 0
         for item,count in counted_items.items():
             unit_price = item_prices[item]["unit_price"]
-            special_offers = item_prices[item]["special_offers"]#Assuming sorted in 
+            special_offers = item_prices[item]["special_offers"]#Assuming sorted with better values first
 
             for offer_amount,offer_price in special_offers:
                 num_applies,count = divmod(count,offer_amount)
@@ -74,6 +79,7 @@ class CheckoutSolution:
         #         total += count * item_prices[item]
 
         return total
+
 
 
 

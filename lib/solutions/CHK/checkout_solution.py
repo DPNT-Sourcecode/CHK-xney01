@@ -53,11 +53,14 @@ class CheckoutSolution:
 
         for item,count in counted_items.items():
             unit_price = item_prices[item]["unit_price"]
-            special_offers = item_prices[item]["special_offers"]
+            special_offers = item_prices[item]["special_offers"]#Assuming sorted in 
 
             for offer_amount,offer_price in special_offers:
-                num_applies,remaining = divmod(count,offer_amount)
-            
+                num_applies,count = divmod(count,offer_amount)
+                total += num_applies * offer_price
+
+            total += count*unit_price
+
 
         # for item,count in counted_items.items():
         #     if item in item_offers:
@@ -71,6 +74,7 @@ class CheckoutSolution:
         #         total += count * item_prices[item]
 
         return total
+
 
 
 

@@ -24,9 +24,3 @@ class SumSolution:
         if not (0<=y<=100):
             raise ValueError(f"'y' must be between 0 and 100, got {y}")
         return x + y
-
-
-
-
-
-

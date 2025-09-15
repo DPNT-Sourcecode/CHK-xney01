@@ -1,7 +1,6 @@
 from collections import Counter
 
 class CheckoutSolution:
-
     def checkout(self, skus:str)->int:
         """
 
@@ -65,5 +64,6 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
+
 
 

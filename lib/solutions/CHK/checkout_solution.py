@@ -81,9 +81,9 @@ class CheckoutSolution:
             int: an integer representing the total checkout value of the items
         """
 
+        # Validating input type
         if not isinstance(skus,str):
             return -1
-        
         for item in skus:
             if item not in self.ITEM_PRICES.keys():
                 return -1
@@ -100,7 +100,8 @@ class CheckoutSolution:
         total = 0
         for item,count in counted_items.items():
             unit_price = self.ITEM_PRICES[item]["unit_price"]
-            special_offers = self.ITEM_PRICES[item]["special_offers"]#Assuming sorted with better values first
+
+            special_offers = sorted(self.ITEM_PRICES[item]["special_offers"], key=lambda x:x[0], reverse=True)
 
             for offer_amount,offer_price in special_offers:
                 num_applies,count = divmod(count,offer_amount)
@@ -109,6 +110,7 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
+
 
 
 

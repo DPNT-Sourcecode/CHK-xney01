@@ -1,6 +1,7 @@
 from collections import Counter
 
 class CheckoutSolution:
+    
     ITEM_PRICES = {
         "A":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
         "B":{"unit_price":30,"special_offers":[(2,45)]},
@@ -8,26 +9,26 @@ class CheckoutSolution:
         "D":{"unit_price":15,"special_offers":[]},
         "E":{"unit_price":40,"special_offers":[]},
         "F":{"unit_price":10,"special_offers":[(3,20)]},
-        "G":{"unit_price":10,"special_offers":[(3,20)]},
-        "H":{"unit_price":10,"special_offers":[(3,20)]},
-        "I":{"unit_price":10,"special_offers":[(3,20)]},
-        "J":{"unit_price":10,"special_offers":[(3,20)]},
-        "K":{"unit_price":10,"special_offers":[(3,20)]},
-        "L":{"unit_price":10,"special_offers":[(3,20)]},
-        "M":{"unit_price":10,"special_offers":[(3,20)]},
-        "N":{"unit_price":10,"special_offers":[(3,20)]},
-        "O":{"unit_price":10,"special_offers":[(3,20)]},
-        "P":{"unit_price":10,"special_offers":[(3,20)]},
-        "Q":{"unit_price":10,"special_offers":[(3,20)]},
-        "R":{"unit_price":10,"special_offers":[(3,20)]},
-        "S":{"unit_price":10,"special_offers":[(3,20)]},
-        "T":{"unit_price":10,"special_offers":[(3,20)]},
-        "U":{"unit_price":10,"special_offers":[(3,20)]},
-        "V":{"unit_price":10,"special_offers":[(3,20)]},
-        "W":{"unit_price":10,"special_offers":[(3,20)]},
-        "X":{"unit_price":10,"special_offers":[(3,20)]},
-        "Y":{"unit_price":10,"special_offers":[(3,20)]},
-        "Z":{"unit_price":10,"special_offers":[(3,20)]},
+        "G":{"unit_price":20,"special_offers":[]},
+        "H":{"unit_price":10,"special_offers":[]},
+        "I":{"unit_price":35,"special_offers":[]},
+        "J":{"unit_price":60,"special_offers":[]},
+        "K":{"unit_price":80,"special_offers":[]},
+        "L":{"unit_price":90,"special_offers":[]},
+        "M":{"unit_price":15,"special_offers":[]},
+        "N":{"unit_price":40,"special_offers":[]},
+        "O":{"unit_price":10,"special_offers":[]},
+        "P":{"unit_price":50,"special_offers":[]},
+        "Q":{"unit_price":30,"special_offers":[]},
+        "R":{"unit_price":20,"special_offers":[]},
+        "S":{"unit_price":10,"special_offers":[]},
+        "T":{"unit_price":10,"special_offers":[]},
+        "U":{"unit_price":10,"special_offers":[]},
+        "V":{"unit_price":10,"special_offers":[]},
+        "W":{"unit_price":10,"special_offers":[]},
+        "X":{"unit_price":10,"special_offers":[]},
+        "Y":{"unit_price":10,"special_offers":[]},
+        "Z":{"unit_price":10,"special_offers":[]},
         }
     
     EXTRA_OFFERS = {
@@ -106,4 +107,5 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
+
 

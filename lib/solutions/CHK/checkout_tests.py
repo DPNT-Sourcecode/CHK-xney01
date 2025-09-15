@@ -25,7 +25,7 @@ class TestCheckout:
 
     def test_illegal_inputs(self):
         checkout = CheckoutSolution()
-        assert checkout.checkout("X") == -1
+        assert checkout.checkout("1") == -1
         assert checkout.checkout(123) == -1
 
     def test_empty_basket(self):

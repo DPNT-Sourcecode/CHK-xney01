@@ -1,3 +1,4 @@
+from collections import Counter
 
 class CheckoutSolution:
 
@@ -24,19 +25,31 @@ class CheckoutSolution:
         Args:
             skus (str): a string containing the SKUs of all the products in the basket
 
-        Raises:
-            NotImplementedError: _description_
-
         Returns:
             int: an integer representing the total checkout value of the items
         """
 
         item_prices = {
-            "A":50, "B":30, "C":20,"D"
+            "A":50, "B":30, "C":20,"D":15
         }
+
+        item_offers = {
+            "A":(3,130),
+            "B":(2,45)
+        }
+
         if not isinstance(skus,str):
             return -1
         
-        raise NotImplementedError()
+        for item in skus:
+            if item not in item_prices.keys():
+                return -1
+        
+        counted_items = Counter(skus)
+        
+        total = 0
+        for item,
+        return total
+
 
 

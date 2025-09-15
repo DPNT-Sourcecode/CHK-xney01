@@ -51,12 +51,15 @@ class CheckoutSolution:
         for item,count in counted_items.items():
             if item in item_offers:
                 offer_amount,offer_price = item_offers[item]
-                
-                num_applies,remaining = divmod()
-                total+=1
+
+                num_applies,remaining = divmod(count,offer_amount)
+
+                total += offer_price * num_applies
+                total += item_prices[item] * remaining
             else:
                 total += count * item_prices[item]
         return total
+
 
 
 

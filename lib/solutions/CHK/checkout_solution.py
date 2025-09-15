@@ -10,14 +10,15 @@ class CheckoutSolution:
         buy three As and they'll cost you 130.
 
         Our price table and offers:
-        +------+-------+----------------+
-        | Item | Price | Special offers |
-        +------+-------+----------------+
-        | A    | 50    | 3A for 130     |
-        | B    | 30    | 2B for 45      |
-        | C    | 20    |                |
-        | D    | 15    |                |
-        +------+-------+----------------+
+        +------+-------+------------------------+
+        | Item | Price | Special offers         |
+        +------+-------+------------------------+
+        | A    | 50    | 3A for 130, 5A for 200 |
+        | B    | 30    | 2B for 45              |
+        | C    | 20    |                        |
+        | D    | 15    |                        |
+        | E    | 40    | 2E get one B free      |
+        +------+-------+------------------------+
 
         Notes:
          - For any illegal input return -1
@@ -30,7 +31,7 @@ class CheckoutSolution:
         """
 
         item_prices = {
-            "A":50, "B":30, "C":20,"D":15
+            "A":50, "B":30, "C":20,"D":15,"E":40
         }
 
         item_offers = {
@@ -58,5 +59,6 @@ class CheckoutSolution:
                 total += item_prices[item] * remaining
             else:
                 total += count * item_prices[item]
-                
+
         return total
+

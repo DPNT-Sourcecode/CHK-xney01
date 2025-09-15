@@ -10,29 +10,31 @@ class CheckoutSolution:
         "E":{"unit_price":40,"special_offers":[]},
         "F":{"unit_price":10,"special_offers":[(3,20)]},
         "G":{"unit_price":20,"special_offers":[]},
-        "H":{"unit_price":10,"special_offers":[]},
+        "H":{"unit_price":10,"special_offers":[(10,80),(5,45)]},
         "I":{"unit_price":35,"special_offers":[]},
         "J":{"unit_price":60,"special_offers":[]},
-        "K":{"unit_price":80,"special_offers":[]},
+        "K":{"unit_price":80,"special_offers":[(2,150)]},
         "L":{"unit_price":90,"special_offers":[]},
         "M":{"unit_price":15,"special_offers":[]},
         "N":{"unit_price":40,"special_offers":[]},
         "O":{"unit_price":10,"special_offers":[]},
-        "P":{"unit_price":50,"special_offers":[]},
-        "Q":{"unit_price":30,"special_offers":[]},
-        "R":{"unit_price":20,"special_offers":[]},
-        "S":{"unit_price":10,"special_offers":[]},
-        "T":{"unit_price":10,"special_offers":[]},
-        "U":{"unit_price":10,"special_offers":[]},
-        "V":{"unit_price":10,"special_offers":[]},
-        "W":{"unit_price":10,"special_offers":[]},
-        "X":{"unit_price":10,"special_offers":[]},
+        "P":{"unit_price":50,"special_offers":[(5,200)]},
+        "Q":{"unit_price":30,"special_offers":[(3,80)]},
+        "R":{"unit_price":50,"special_offers":[]},
+        "S":{"unit_price":30,"special_offers":[]},
+        "T":{"unit_price":20,"special_offers":[]},
+        "U":{"unit_price":40,"special_offers":[(4,120)]},
+        "V":{"unit_price":50,"special_offers":[(3,130),(2,90)]},
+        "W":{"unit_price":20,"special_offers":[]},
+        "X":{"unit_price":90,"special_offers":[]},
         "Y":{"unit_price":10,"special_offers":[]},
-        "Z":{"unit_price":10,"special_offers":[]},
+        "Z":{"unit_price":50,"special_offers":[]},
         }
     
     EXTRA_OFFERS = {
         "E":(2,"B",1),
+        "N":(3,"M",1),
+        "R":(3,"Q",1),
     }
     def checkout(self, skus:str)->int:
         """
@@ -107,5 +109,6 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
+
 
 

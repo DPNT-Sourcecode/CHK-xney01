@@ -46,10 +46,18 @@ class CheckoutSolution:
                 return -1
         
         counted_items = Counter(skus)
-        
+
         total = 0
-        for item,
+        for item,count in counted_items.items():
+            if item in item_offers:
+                offer_amount,offer_price = item_offers[item]
+                
+                num_applies,remaining = divmod()
+                total+=1
+            else:
+                total += count * item_prices[item]
         return total
+
 
 
 

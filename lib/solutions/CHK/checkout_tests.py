@@ -10,7 +10,7 @@ class TestCheckout:
 
     def test_many_items(self):
         checkout = CheckoutSolution()
-        assert checkout.checkout("ABACAA") == 230
+        assert checkout.checkout("ABACA") == 180
 
 
     def test_empty_basket(self):

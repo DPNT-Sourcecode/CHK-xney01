@@ -32,10 +32,10 @@ class CheckoutSolution:
 
         item_prices = {
             "A":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
-            "B":{"unit_price":50,"special_offers":[(2,45)]},
-            "C":{"unit_price":50,"special_offers":[]},
-            "D":{"unit_price":50,"special_offers":[]},
-            "E":{"unit_price":50,"special_offers":[]},
+            "B":{"unit_price":30,"special_offers":[(2,45)]},
+            "C":{"unit_price":20,"special_offers":[]},
+            "D":{"unit_price":15,"special_offers":[]},
+            "E":{"unit_price":40,"special_offers":[]},
         }
 
         extra_offers = {"E":(2,"B",1)}
@@ -51,9 +51,9 @@ class CheckoutSolution:
 
         for item,(required_amount,free_item,free_amount) in extra_offers.items():
             if item in counted_items:
-                free_count = counted_items[item] * free_amount
-                
-        
+                free_count = (counted_items[item]//required_amount) * free_amount
+                if free_item in counted_items:
+                    counted_items[free_item] = counted_items[free_item] - free_count
 
         total = 0
         for item,count in counted_items.items():
@@ -66,22 +66,4 @@ class CheckoutSolution:
 
             total += count*unit_price
 
-
-        # for item,count in counted_items.items():
-        #     if item in item_offers:
-        #         offer_amount,offer_price = item_offers[item]
-
-        #         num_applies,remaining = divmod(count,offer_amount)
-
-        #         total += offer_price * num_applies
-        #         total += item_prices[item] * remaining
-        #     else:
-        #         total += count * item_prices[item]
-
         return total
-
-
-
-
-
-

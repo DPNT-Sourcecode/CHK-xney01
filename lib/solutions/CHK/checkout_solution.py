@@ -32,11 +32,13 @@ class CheckoutSolution:
 
         item_prices = {
             "A":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
-            "B":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
-            "C":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
-            "D":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
-            "E":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
+            "B":{"unit_price":50,"special_offers":[(2,45)]},
+            "C":{"unit_price":50,"special_offers":[]},
+            "D":{"unit_price":50,"special_offers":[]},
+            "E":{"unit_price":50,"special_offers":[]},
         }
+
+        extra_offers = {"E":(2,"B",1)}
 
         # item_prices = {
         #     "A":50, "B":30, "C":20,"D":15,"E":40
@@ -57,17 +59,22 @@ class CheckoutSolution:
         counted_items = Counter(skus)
 
         total = 0
+
         for item,count in counted_items.items():
-            if item in item_offers:
-                offer_amount,offer_price = item_offers[item]
+            if
 
-                num_applies,remaining = divmod(count,offer_amount)
+        # for item,count in counted_items.items():
+        #     if item in item_offers:
+        #         offer_amount,offer_price = item_offers[item]
 
-                total += offer_price * num_applies
-                total += item_prices[item] * remaining
-            else:
-                total += count * item_prices[item]
+        #         num_applies,remaining = divmod(count,offer_amount)
+
+        #         total += offer_price * num_applies
+        #         total += item_prices[item] * remaining
+        #     else:
+        #         total += count * item_prices[item]
 
         return total
+
 
 

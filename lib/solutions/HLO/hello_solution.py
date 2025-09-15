@@ -6,6 +6,3 @@ class HelloSolution:
         if not isinstance(friend_name,str):
             raise TypeError(f"'friend_name' must be of type {type(friend_name)}")
         return f"Hello, {friend_name}!"
-
-
-

@@ -32,13 +32,13 @@ class CheckoutSolution:
         }
     
     EXTRA_OFFERS = {
-        "E":(2,"B",1),# 
+        "E":(2,"B",1),# Format is item:(item_quantity,free_item,free_item_quantity)
         "N":(3,"M",1),
         "R":(3,"Q",1),
     }
 
     GROUP_OFFERS = {
-        ("S","T","X","Y","Z"):(3,45)#
+        {""}
     }
 
 
@@ -103,6 +103,8 @@ class CheckoutSolution:
                 if free_item in counted_items:
                     counted_items[free_item] = max(0,counted_items[free_item] - free_count)
 
+        
+
         total = 0
         for item,count in counted_items.items():
             unit_price = self.ITEM_PRICES[item]["unit_price"]
@@ -116,10 +118,3 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
-
-
-
-
-
-
-

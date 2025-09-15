@@ -13,7 +13,7 @@ class CheckoutSolution:
         "H": {"unit_price": 10, "special_offers": [(10, 80), (5, 45)]},
         "I": {"unit_price": 35, "special_offers": []},
         "J": {"unit_price": 60, "special_offers": []},
-        "K": {"unit_price": 70, "special_offers": [(2, 150)]},
+        "K": {"unit_price": 70, "special_offers": [(2, 120)]},
         "L": {"unit_price": 90, "special_offers": []},
         "M": {"unit_price": 15, "special_offers": []},
         "N": {"unit_price": 40, "special_offers": []},
@@ -112,6 +112,7 @@ class CheckoutSolution:
 
         return total
     
+
 
 
 

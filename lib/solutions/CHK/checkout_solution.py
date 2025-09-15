@@ -31,13 +31,21 @@ class CheckoutSolution:
         """
 
         item_prices = {
-            "A":50, "B":30, "C":20,"D":15,"E":40
+            "A":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
+            "B":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
+            "C":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
+            "D":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
+            "E":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
         }
 
-        item_offers = {
-            "A":(3,130),
-            "B":(2,45)
-        }
+        # item_prices = {
+        #     "A":50, "B":30, "C":20,"D":15,"E":40
+        # }
+
+        # item_offers = {
+        #     "A":(3,130),
+        #     "B":(2,45)
+        # }
 
         if not isinstance(skus,str):
             return -1
@@ -61,4 +69,5 @@ class CheckoutSolution:
                 total += count * item_prices[item]
 
         return total
+
 

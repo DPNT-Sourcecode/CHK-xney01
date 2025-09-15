@@ -1,7 +1,6 @@
 from lib.solutions.CHK.checkout_solution import CheckoutSolution
-import pytest
 
-# Not doing extensive tests due to time
+# Not doing extensive tests or using pytest due to time
 class TestCheckout:
     def test_single_items(self):
         checkout = CheckoutSolution()
@@ -28,6 +27,12 @@ class TestCheckout:
         assert checkout.checkout("1") == -1
         assert checkout.checkout(123) == -1
 
+    def test_group_offers(self):
+        checkout = CheckoutSolution()
+        assert checkout.checkout("SSS") == 45
+        assert checkout.checkout("XSSZ") == 62
+
     def test_empty_basket(self):
         checkout = CheckoutSolution()
         assert checkout.checkout("") == 0
+

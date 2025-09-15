@@ -33,7 +33,7 @@ class CheckoutSolution:
             "C":{"unit_price":20,"special_offers":[]},
             "D":{"unit_price":15,"special_offers":[]},
             "E":{"unit_price":40,"special_offers":[]},
-            "F":{"unit_price":10,"special_offers":[]},
+            "F":{"unit_price":10,"special_offers":[(3,20)]},
         }
 
         extra_offers = {"E":(2,"B",1)}
@@ -65,4 +65,5 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
+
 

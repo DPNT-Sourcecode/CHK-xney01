@@ -5,6 +5,7 @@ class HelloSolution:
     def hello(self, friend_name:str)->str:
         if not isinstance(friend_name,str):
             raise TypeError(f"'friend_name' must be of type {type(friend_name)}")
-        return f"Hello, World!"
+        return f"Hello, {friend_name}!"
+
 
 

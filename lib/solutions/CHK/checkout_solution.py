@@ -3,11 +3,7 @@ from collections import Counter
 class CheckoutSolution:
 
     def checkout(self, skus:str)->int:
-        """In a normal supermarket, things are identified using Stock Keeping Units, or SKUs.
-        In our store, we'll use individual letters of the alphabet (A, B, C, and so on).
-        Our goods are priced individually. In addition, some items are multi-priced: buy n of them, and they'll cost you y pounds.
-        For example, item A might cost 50 pounds individually, but this week we have a special offer:
-        buy three As and they'll cost you 130.
+        """
 
         Our price table and offers:
         +------+-------+------------------------+
@@ -18,6 +14,7 @@ class CheckoutSolution:
         | C    | 20    |                        |
         | D    | 15    |                        |
         | E    | 40    | 2E get one B free      |
+        | F    | 10    | 2F get one F free      |
         +------+-------+------------------------+
 
         Notes:
@@ -36,6 +33,7 @@ class CheckoutSolution:
             "C":{"unit_price":20,"special_offers":[]},
             "D":{"unit_price":15,"special_offers":[]},
             "E":{"unit_price":40,"special_offers":[]},
+            "F":{"unit_price":10,"special_offers":[]},
         }
 
         extra_offers = {"E":(2,"B",1)}
@@ -67,3 +65,4 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
+

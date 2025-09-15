@@ -109,7 +109,10 @@ class CheckoutSolution:
             group_size = group["group_size"]
             group_price = group["group_price"]
 
-            
+            # Should use most expensive items from group first
+            group_list = []
+            for item in group_items:
+                group_list
             total+=1
 
         for item,count in counted_items.items():
@@ -124,4 +127,5 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
+
 

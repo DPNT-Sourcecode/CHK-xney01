@@ -1,6 +1,38 @@
 from collections import Counter
 
 class CheckoutSolution:
+    ITEM_PRICES = {
+        "A":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
+        "B":{"unit_price":30,"special_offers":[(2,45)]},
+        "C":{"unit_price":20,"special_offers":[]},
+        "D":{"unit_price":15,"special_offers":[]},
+        "E":{"unit_price":40,"special_offers":[]},
+        "F":{"unit_price":10,"special_offers":[(3,20)]},
+        "G":{"unit_price":10,"special_offers":[(3,20)]},
+        "H":{"unit_price":10,"special_offers":[(3,20)]},
+        "I":{"unit_price":10,"special_offers":[(3,20)]},
+        "J":{"unit_price":10,"special_offers":[(3,20)]},
+        "K":{"unit_price":10,"special_offers":[(3,20)]},
+        "L":{"unit_price":10,"special_offers":[(3,20)]},
+        "M":{"unit_price":10,"special_offers":[(3,20)]},
+        "N":{"unit_price":10,"special_offers":[(3,20)]},
+        "O":{"unit_price":10,"special_offers":[(3,20)]},
+        "P":{"unit_price":10,"special_offers":[(3,20)]},
+        "Q":{"unit_price":10,"special_offers":[(3,20)]},
+        "R":{"unit_price":10,"special_offers":[(3,20)]},
+        "S":{"unit_price":10,"special_offers":[(3,20)]},
+        "T":{"unit_price":10,"special_offers":[(3,20)]},
+        "U":{"unit_price":10,"special_offers":[(3,20)]},
+        "V":{"unit_price":10,"special_offers":[(3,20)]},
+        "W":{"unit_price":10,"special_offers":[(3,20)]},
+        "X":{"unit_price":10,"special_offers":[(3,20)]},
+        "Y":{"unit_price":10,"special_offers":[(3,20)]},
+        "Z":{"unit_price":10,"special_offers":[(3,20)]},
+        }
+    
+    EXTRA_OFFERS = {
+        "E":(2,"B",1),
+    }
     def checkout(self, skus:str)->int:
         """
 
@@ -46,42 +78,17 @@ class CheckoutSolution:
             int: an integer representing the total checkout value of the items
         """
 
-        item_prices = {
-            "A":{"unit_price":50,"special_offers":[(5,200),(3,130)]},
-            "B":{"unit_price":30,"special_offers":[(2,45)]},
-            "C":{"unit_price":20,"special_offers":[]},
-            "D":{"unit_price":15,"special_offers":[]},
-            "E":{"unit_price":40,"special_offers":[]},
-            "F":{"unit_price":10,"special_offers":[(3,20)]},
-            "G":{"unit_price":10,"special_offers":[(3,20)]},
-            "H":{"unit_price":10,"special_offers":[(3,20)]},
-            "I":{"unit_price":10,"special_offers":[(3,20)]},
-            "J":{"unit_price":10,"special_offers":[(3,20)]},
-            "K":{"unit_price":10,"special_offers":[(3,20)]},
-            "L":{"unit_price":10,"special_offers":[(3,20)]},
-            "M":{"unit_price":10,"special_offers":[(3,20)]},
-            "F":{"unit_price":10,"special_offers":[(3,20)]},
-            "F":{"unit_price":10,"special_offers":[(3,20)]},
-            "F":{"unit_price":10,"special_offers":[(3,20)]},
-            "F":{"unit_price":10,"special_offers":[(3,20)]},
-            "F":{"unit_price":10,"special_offers":[(3,20)]},
-            "F":{"unit_price":10,"special_offers":[(3,20)]},
-            "F":{"unit_price":10,"special_offers":[(3,20)]},
-            "F":{"unit_price":10,"special_offers":[(3,20)]},
-        }
-
-        extra_offers = {"E":(2,"B",1)}
-
         if not isinstance(skus,str):
             return -1
         
         for item in skus:
-            if item not in item_prices.keys():
+            if item not in self.ITEM_PRICES.keys():
                 return -1
         
         counted_items = Counter(skus)
 
-        for item,(required_amount,free_item,free_amount) in extra_offers.items():
+        # Calculates the extra offers, across items
+        for item,(required_amount,free_item,free_amount) in self.EXTRA_OFFERS.items():
             if item in counted_items:
                 free_count = (counted_items[item]//required_amount) * free_amount
                 if free_item in counted_items:
@@ -89,8 +96,8 @@ class CheckoutSolution:
 
         total = 0
         for item,count in counted_items.items():
-            unit_price = item_prices[item]["unit_price"]
-            special_offers = item_prices[item]["special_offers"]#Assuming sorted with better values first
+            unit_price = self.ITEM_PRICES[item]["unit_price"]
+            special_offers = self.ITEM_PRICES[item]["special_offers"]#Assuming sorted with better values first
 
             for offer_amount,offer_price in special_offers:
                 num_applies,count = divmod(count,offer_amount)
@@ -99,3 +106,4 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
+

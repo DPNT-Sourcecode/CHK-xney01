@@ -32,10 +32,16 @@ class CheckoutSolution:
         }
     
     EXTRA_OFFERS = {
-        "E":(2,"B",1),
+        "E":(2,"B",1),# 
         "N":(3,"M",1),
         "R":(3,"Q",1),
     }
+
+    GROUP_OFFERS = {
+        ("S","T","X","Y","Z"):(3,45)#
+    }
+
+
     def checkout(self, skus:str)->int:
         """
 
@@ -110,6 +116,7 @@ class CheckoutSolution:
             total += count*unit_price
 
         return total
+
 
 
 

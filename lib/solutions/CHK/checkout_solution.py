@@ -58,9 +58,5 @@ class CheckoutSolution:
                 total += item_prices[item] * remaining
             else:
                 total += count * item_prices[item]
+                
         return total
-
-
-
-
-
